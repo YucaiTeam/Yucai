@@ -1,0 +1,86 @@
+.rightbody{
+	width: 300px;
+}
+.rightnav{
+	width: 300px;
+}
+
+.order{
+	margin-top: 50px;
+	
+}
+
+.order dt{
+	border-bottom: 1px dashed black;
+	margin-top: -10px;
+	padding-bottom: 10px;
+}
+.order dt span{
+	position: relative;
+	padding: 10px 10px;
+	font-family: "微软雅黑";
+	font-style: inherit;
+}
+.history{
+	position: relative;
+	margin-top: 50px;
+	margin-left: 20px;
+	
+}
+.history dt{
+	margin-top: -10px;
+}
+.history dt span{
+	position: relative;
+	padding: 10px 10px;
+	font-family: "微软雅黑";
+	font-style: inherit;
+}
+.rightnav div{
+	position: relative;
+	vertical-align:middle;
+	margin-top: 2.5px;
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	display: inline-block;
+}
+.rightnav div a{	
+	text-decoration: none;
+}
+.rightnav span{
+	color: white;
+	font-style: normal;
+}
+.rightnav img{
+	margin: 15px 0px 10px;
+	height: 30px;
+}
+.rightnav-1{
+	background: #ffa914;
+}
+.rightnav-2{
+	background: #4ba8f9;
+}
+.rightnav-3{
+	background: #e994dc;
+}
+.rightnav-4{
+	background: #4ad7ac;
+}
+.rightnav-5{
+	background: #aa70ec;
+}
+.rightnav-6{
+	background: #3bcfea;
+}
+.rightnav-7{
+	background: #ee6d76;;
+}
+.rightnav-8{
+	background: #7b8a9d;
+}
+
+.right{
+	width: 22%;
+}

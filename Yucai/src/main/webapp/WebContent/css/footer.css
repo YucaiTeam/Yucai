@@ -1,0 +1,15 @@
+.top {
+    height: 0.4375rem;
+    background-color: #F69700;
+}
+
+.foot{
+    background-color: #1252B3;
+    color: white;
+    font-size: 0.9375rem;
+    font-family: 微软雅黑;
+}
+
+.container{
+    width: 60%;
+}

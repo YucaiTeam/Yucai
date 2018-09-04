@@ -1,0 +1,225 @@
+@charset "UTF-8";
+#contain {
+	margin: 0 auto;
+	color: #494949;
+}
+
+.left {
+	margin-left: 85px;
+	width: 66.7%;
+	float: left;
+}
+
+.crumbs {
+	font-size: 14px;
+	width: 100%;
+	padding: 15px 0 15px 85px;
+}
+
+.right-message{
+	float: right;
+	width: 85%;
+	margin-bottom: 25px;
+}
+
+@media (max-width: 992px){
+	.right {
+		display:none;
+	}
+	.left {
+		width: 100%;
+		margin-left: 0;
+	}
+	.crumbs {
+		padding: 15px 0;
+	}
+	.listleft {
+		display: none;
+	}
+	.right-message {
+			width: 96%;
+			}
+}
+
+.area-box {
+	padding-top: 30px;
+	font-size: 14px;
+	margin-bottom: 25px;
+}
+
+
+.area-box ul, .position-box ul {
+	padding-left: 88px;
+}
+
+.area-box li{
+	height: 24px;
+	float: left;
+	width: 65px;
+	line-height: 24px;
+	text-align: center;
+	margin-bottom: 10px
+}
+.position-box li{
+	height: 24px;
+	float: left;
+	width: 89px;
+	line-height: 24px;
+	text-align: center;
+	margin-bottom: 10px
+}
+.sm-tips {
+	width: 88px;
+	float: left;
+}
+
+.position-box {
+	font-size: 14px;
+	margin-bottom: 25px;
+}
+
+.area-box li:hover {
+	cursor: pointer;
+	background: url(../img/yj.png)
+}
+
+.position-box li:hover {
+	cursor: pointer;
+	background: url(../img/yj2.png)
+}
+
+.back {
+	background: url(../img/yj.png)
+}
+
+.back2 {
+	background: url(../img/yj2.png)
+}
+
+.crumbs a{
+	text-decoration: none;
+	color:  #494949;
+}
+.crumbs a:hover {
+	color: #ff8d22;
+}
+.hover {
+	float: left;
+	font-size: 16px;
+	height: 33px;
+	color: #ff7b00;
+	border-bottom:3px solid #ff7b00
+}
+
+
+.listContent{
+	padding-top: 30px;
+	border-bottom: 1px solid #ddd;
+}
+.listleft{
+	width: 15%;
+	float: left;
+}
+.left-time {
+	width: 82px;
+	text-align: center;
+	margin-left: 20px;
+}
+.date{
+	font-size: 36px;
+	margin: 0;
+	color: #8a8988;
+}
+
+.year {
+	font-size: 15px;
+	background: #8a8988;
+	border-radius: 15px;
+	margin: 0;
+	color: white;
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+.right-message h2:hover {
+	color: #ff8400;
+}
+
+.right-message p:hover {
+	color: #ff8400;
+}
+h2 {
+	font-size: 23px;
+	margin-bottom: 15px;
+}
+
+.right-message p {
+	font-size: 12px;
+	color: #737373;
+	margin-bottom: 12px;
+}
+
+#hotspot {
+	font-size: 12px;
+	color: #737373;
+}
+
+.allspots {
+	background: url('../img/qi.png') no-repeat;
+	padding-left:20px;
+}
+
+.allspots:hover {
+	color: #ff8400;
+}
+
+.date-hover{
+	background-color: #ff8400;
+} 
+
+.message-box{
+	margin-bottom: 80px;
+}
+
+.page-wrap {
+	margin-bottom: 80px;
+	text-align: center;
+}
+.page-num {
+	display: inline-block;
+	margin: 0 auto;	
+}
+.page-num ul {
+	padding-left: 0;	
+}
+.page-num li {
+	font-size:  14px;
+    float: left;
+    height: 23px;
+    border: 1px solid #e6e6e6;
+    padding: 0 10px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 23px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.page-num li:hover {
+    background: linear-gradient(to right, rgba(255, 141, 0, 1), rgba(255, 184, 0, 1));
+}
+
+.right {
+	margin-right: 30px;
+	padding-top: 30px;
+	height: 918px;
+	width: 32.3%;
+	float:right;
+}

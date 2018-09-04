@@ -1,0 +1,21 @@
+document.writeln("<link rel=\'stylesheet\' href=\'css/footer.css\'></link>");
+document.writeln("")
+document.writeln("    <footer>");
+document.writeln("        <div class=\'top\'>");
+document.writeln("");
+document.writeln("        </div>");
+document.writeln("        <div class=\'foot\'>");
+document.writeln("            <div class=\'container\' style=\'font-size: 13px;padding-bottom: 30px\'>");
+document.writeln("                <div style=\'font-size: 1.5rem;padding-top: 20px;padding-bottom: 10px\'>咨询电话：0532-88912779</div>");
+document.writeln("                <div>合作院校:</div>");
+document.writeln("                <div>青岛农业大学、德州学院、枣庄学院、青岛理工学院、山东科技大学、潍坊学院、山东交通学院、济宁医学院、济宁学院</div>");
+document.writeln("                <div style=\'padding-top: 15px\'>咨询地点：</div>");
+document.writeln("                <div>青岛: &nbsp;青岛市崂山区劲松七路217号高新职业学校</div>");
+document.writeln("                <div>济南: &nbsp;山东交通学院教学楼2B410</div>");
+document.writeln("                <div>日照: &nbsp;济宁医学院主楼11楼1133</div>");
+document.writeln("                <div>德州: &nbsp;德州学院厚德楼3楼信管教研室</div>");
+document.writeln("                <div>枣庄: &nbsp;枣庄学院墨子楼被区5楼3511</div>");
+document.writeln("                <div>济宁: &nbsp;济宁学院计算机系7号办公楼302室</div>");
+document.writeln("            </div>");
+document.writeln("        </div>");
+document.writeln("    </footer>");

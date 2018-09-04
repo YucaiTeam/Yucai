@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyg.yucai.mapper.TDetailMapper">
+  <resultMap id="BaseResultMap" type="com.hyg.yucai.model.TDetail">
+    <id column="detailId" jdbcType="INTEGER" property="detailid" />
+    <result column="detailContent" jdbcType="VARCHAR" property="detailcontent" />
+    <result column="detailPrice" jdbcType="VARCHAR" property="detailprice" />
+    <result column="detailPeople" jdbcType="VARCHAR" property="detailpeople" />
+    <result column="detailEffect" jdbcType="VARCHAR" property="detaileffect" />
+    <result column="courseId" jdbcType="INTEGER" property="courseid" />
+    <result column="standby_field_01" jdbcType="VARCHAR" property="standbyField01" />
+    <result column="standby_field_02" jdbcType="VARCHAR" property="standbyField02" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    detailId, detailContent, detailPrice, detailPeople, detailEffect, courseId, standby_field_01, 
+    standby_field_02
+  </sql>
+  <select id="selectByExample" parameterType="com.hyg.yucai.model.TDetailExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_detail
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_detail
+    where detailId = #{detailid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_detail
+    where detailId = #{detailid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hyg.yucai.model.TDetailExample">
+    delete from t_detail
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hyg.yucai.model.TDetail">
+    insert into t_detail (detailId, detailContent, detailPrice, 
+      detailPeople, detailEffect, courseId, 
+      standby_field_01, standby_field_02)
+    values (#{detailid,jdbcType=INTEGER}, #{detailcontent,jdbcType=VARCHAR}, #{detailprice,jdbcType=VARCHAR}, 
+      #{detailpeople,jdbcType=VARCHAR}, #{detaileffect,jdbcType=VARCHAR}, #{courseid,jdbcType=INTEGER}, 
+      #{standbyField01,jdbcType=VARCHAR}, #{standbyField02,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hyg.yucai.model.TDetail">
+    insert into t_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="detailid != null">
+        detailId,
+      </if>
+      <if test="detailcontent != null">
+        detailContent,
+      </if>
+      <if test="detailprice != null">
+        detailPrice,
+      </if>
+      <if test="detailpeople != null">
+        detailPeople,
+      </if>
+      <if test="detaileffect != null">
+        detailEffect,
+      </if>
+      <if test="courseid != null">
+        courseId,
+      </if>
+      <if test="standbyField01 != null">
+        standby_field_01,
+      </if>
+      <if test="standbyField02 != null">
+        standby_field_02,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="detailid != null">
+        #{detailid,jdbcType=INTEGER},
+      </if>
+      <if test="detailcontent != null">
+        #{detailcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="detailprice != null">
+        #{detailprice,jdbcType=VARCHAR},
+      </if>
+      <if test="detailpeople != null">
+        #{detailpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="detaileffect != null">
+        #{detaileffect,jdbcType=VARCHAR},
+      </if>
+      <if test="courseid != null">
+        #{courseid,jdbcType=INTEGER},
+      </if>
+      <if test="standbyField01 != null">
+        #{standbyField01,jdbcType=VARCHAR},
+      </if>
+      <if test="standbyField02 != null">
+        #{standbyField02,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hyg.yucai.model.TDetailExample" resultType="java.lang.Long">
+    select count(*) from t_detail
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_detail
+    <set>
+      <if test="record.detailid != null">
+        detailId = #{record.detailid,jdbcType=INTEGER},
+      </if>
+      <if test="record.detailcontent != null">
+        detailContent = #{record.detailcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detailprice != null">
+        detailPrice = #{record.detailprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detailpeople != null">
+        detailPeople = #{record.detailpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detaileffect != null">
+        detailEffect = #{record.detaileffect,jdbcType=VARCHAR},
+      </if>
+      <if test="record.courseid != null">
+        courseId = #{record.courseid,jdbcType=INTEGER},
+      </if>
+      <if test="record.standbyField01 != null">
+        standby_field_01 = #{record.standbyField01,jdbcType=VARCHAR},
+      </if>
+      <if test="record.standbyField02 != null">
+        standby_field_02 = #{record.standbyField02,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_detail
+    set detailId = #{record.detailid,jdbcType=INTEGER},
+      detailContent = #{record.detailcontent,jdbcType=VARCHAR},
+      detailPrice = #{record.detailprice,jdbcType=VARCHAR},
+      detailPeople = #{record.detailpeople,jdbcType=VARCHAR},
+      detailEffect = #{record.detaileffect,jdbcType=VARCHAR},
+      courseId = #{record.courseid,jdbcType=INTEGER},
+      standby_field_01 = #{record.standbyField01,jdbcType=VARCHAR},
+      standby_field_02 = #{record.standbyField02,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hyg.yucai.model.TDetail">
+    update t_detail
+    <set>
+      <if test="detailcontent != null">
+        detailContent = #{detailcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="detailprice != null">
+        detailPrice = #{detailprice,jdbcType=VARCHAR},
+      </if>
+      <if test="detailpeople != null">
+        detailPeople = #{detailpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="detaileffect != null">
+        detailEffect = #{detaileffect,jdbcType=VARCHAR},
+      </if>
+      <if test="courseid != null">
+        courseId = #{courseid,jdbcType=INTEGER},
+      </if>
+      <if test="standbyField01 != null">
+        standby_field_01 = #{standbyField01,jdbcType=VARCHAR},
+      </if>
+      <if test="standbyField02 != null">
+        standby_field_02 = #{standbyField02,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where detailId = #{detailid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hyg.yucai.model.TDetail">
+    update t_detail
+    set detailContent = #{detailcontent,jdbcType=VARCHAR},
+      detailPrice = #{detailprice,jdbcType=VARCHAR},
+      detailPeople = #{detailpeople,jdbcType=VARCHAR},
+      detailEffect = #{detaileffect,jdbcType=VARCHAR},
+      courseId = #{courseid,jdbcType=INTEGER},
+      standby_field_01 = #{standbyField01,jdbcType=VARCHAR},
+      standby_field_02 = #{standbyField02,jdbcType=VARCHAR}
+    where detailId = #{detailid,jdbcType=INTEGER}
+  </update>
+</mapper>

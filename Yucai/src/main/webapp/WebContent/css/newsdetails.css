@@ -1,0 +1,60 @@
+body{
+	vertical-align: middle;
+}
+
+.container-fluid span{
+	margin: 0px 5px;
+	color: #696868;
+}
+.url{
+	cursor: pointer;
+}
+.guide{
+	padding: 20px 50px;
+	background: #f8f8f8;
+	color:#696868;
+	font-size: 16px;
+	text-indent: 2em;
+	line-height: 28px;
+}
+.content{
+	padding: 30px;
+}
+.left{
+	float: left;
+	width: 72%;
+	padding: 0px 0px 0px 50px;
+}
+.right{
+	float: right;
+	padding-right: 20px;
+	width: 30%;
+	height: 1000px;
+}
+
+    @media screen and (max-width: 1155px) {
+      .right {
+	  		display: none;
+      }
+      .left{
+      		width: 100%;
+      		padding: 15px;
+      }
+    }
+    @media screen and (max-width: 600px) {
+
+     .container-fluid span{
+     	display: block;
+     }
+     .left{
+      		width: 100%;
+      		padding: 0px;
+      		margin: 0px;
+      }
+      .guide{
+      		padding: 10px 20px;
+      }
+      h2{
+      	text-align:left;
+      }
+    }

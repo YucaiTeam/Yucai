@@ -1,0 +1,77 @@
+@charset "UTF-8";
+body {
+	font-size: 14px;
+}
+
+.title-info {
+	padding-bottom: 21px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 35px;
+}
+
+.title-info h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 30px;
+    padding: 30px 0 20px;
+}
+a:hover {
+	text-decoration: none;
+}
+.title-info .time {
+    margin: 0 40px 0 60px;
+}
+.title-info .author {
+    margin: 0 40px;
+}
+.introuction {
+    text-indent: 54px;
+    color: #696868;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 30px;
+    margin-bottom: 50px;
+    background-color: #ededed;
+}
+
+.stepWp {
+    font-size: 18px;
+}
+
+.stepWp>div {
+	margin-bottom: 30px;
+}
+
+.stepWp .editor {
+    padding-top: 38px;
+    margin-bottom: 70px;
+    text-align: right;
+}
+
+.coursePage {
+    text-align: center;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.coursePage a {
+    display: inline-block;
+    padding: 0 14px;
+    height: 40px;
+    border: solid 1px #eaeaea;
+    text-align: center;
+    line-height: 38px;
+    margin-right: 12px;
+    color: #333;
+    border-radius: 4px;
+    font-size: 18px;
+}
+.coursePage li {
+    display: inline-block;
+}
+.coursePage a:hover {
+    text-decoration: none;
+    color: #e8453c;
+    border: solid 1px #e8453c;
+}
+

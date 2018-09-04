@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="com.hyg.yucai.mapper.TAreaMapperCustom">
+	
+	<resultMap type="com.hyg.yucai.model.TAreaCustom" id="AreaCustomResultMap">
+		<id column="areaId" jdbcType="INTEGER" property="areaid" />
+		<result column="areano" jdbcType="VARCHAR" property="areano" />
+		<result column="areaName" jdbcType="VARCHAR" property="areaname" />
+		<collection property="tBank" ofType="com.hyg.yucai.model.TBank">
+			<id column="bankId" jdbcType="INTEGER" property="bankid" />
+			<result column="bankno" jdbcType="VARCHAR" property="bankno" />
+			<result column="bankName" jdbcType="VARCHAR" property="bankname" />
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.hyg.yucai.model.TBank" id="BankResultMap">
+		<id column="BankId" jdbcType="INTEGER" property="bankid" />
+		<result column="bankno" jdbcType="VARCHAR" property="bankno" />
+		<result column="bankName" jdbcType="VARCHAR" property="bankname" />
+	</resultMap>
+	
+	<!-- 查询地区以及关联银行 -->
+	<select id="selectAreaAndBank" resultMap="AreaCustomResultMap">
+		select 
+			t_area.areaId,t_area.areaName,t_area.areano,
+		    t_bank.bankId,t_bank.bankName,t_bank.bankno
+		from 
+			t_area,t_ab,t_bank 
+		where 
+			t_ab.areano=t_area.areano and t_ab.bankno=t_bank.bankno;
+	</select>
+	<!-- 根据地区号查询银行 -->
+	<select id="selectBankByAreano" resultMap="BankResultMap" parameterType="String">
+		select 
+			*	
+		from
+			t_bank,t_ab
+		where 
+			t_bank.bankno = t_ab.bankno
+   		and 
+   			t_ab.areano = #{areano};
+	</select>
+</mapper>

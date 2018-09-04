@@ -1,0 +1,15 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.container-fluid {
+    padding: 0;
+}
+
+
+ul {
+	list-style: none;
+}
+ol, ul, li {
+    list-style: none;
+}

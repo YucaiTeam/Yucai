@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyg.yucai.mapper.TNewsMapperSimple">
+	<resultMap type="com.hyg.yucai.model.TNews" id="NewsSimple">
+		<id column="newsId" property="newsid" jdbcType="INTEGER"/>
+		<result column="newsTitle" property="newstitle" jdbcType="VARCHAR"/>
+		<result column="newsGuide" property="newsguide" jdbcType="VARCHAR"/>
+		<result column="editDate" property="editdate" jdbcType="TIMESTAMP"/>
+	</resultMap>
+	<!-- 获取简要新闻内容 -->
+	<select id="selectNewsSimple" parameterType="com.hyg.yucai.model.News" resultMap="NewsSimple">
+	select 
+		newsId,newsTitle,newsGuide,editDate
+	from
+		t_news
+	<where>
+		<if test="areano!=null and  areano !='' ">
+			and areano='${areano}'
+		</if>
+		<if test="bankno!=null and bankno!=''">
+			and bankno='${bankno}'
+		</if>
+	</where>
+	order by 
+		editDate desc
+	limit 
+		#{startid},10
+	</select>
+	<!-- 获取新闻总条数 -->
+	<select id="selectNewsCount" parameterType="com.hyg.yucai.model.News" resultType="int">
+	select 
+		count(newsId)
+	from
+		t_news
+	<where>
+		<if test="areano!=null and  areano !='' ">
+			and areano='${areano}'
+		</if>
+		<if test="bankno!=null and bankno!=''">
+			and bankno='${bankno}'
+		</if>
+	</where>
+	</select>
+</mapper>
